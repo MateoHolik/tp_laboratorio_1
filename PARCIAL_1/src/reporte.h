@@ -5,6 +5,7 @@
 #include "censista.h"
 #include "datosCenso.h"
 #include "zona.h"
+#include "reporte.h"
 
 #define OCUPADO 1
 #define VACIO 0

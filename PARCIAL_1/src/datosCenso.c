@@ -190,7 +190,7 @@ int altaDatoZona(eDatosCenso listCenso[], int lenCenso, int idCenso, int idZona,
 
 	return returnValue;
 }
-
+/*
 void datosCensoHardcode(eDatosCenso list[], int length, int cantidad)
 {
 	eDatosCenso datos[3] = {
@@ -205,7 +205,7 @@ void datosCensoHardcode(eDatosCenso list[], int length, int cantidad)
 	}
 
 }
-
+*/
 /*
 void zonasHardcode(eZona list[], int length, int cantidad)
 {

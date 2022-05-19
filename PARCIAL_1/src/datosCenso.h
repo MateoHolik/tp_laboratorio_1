@@ -97,6 +97,6 @@ int mostrarCensosPendientes(eZona listZona[], int lenZona, eCensista listCensist
 ///
 /// @param listZona
 void mostraCensoPendiente(eZona listZona);
-
+void datosCensoHardcode(eDatosCenso list[], int length, int cantidad);
 //void zonasHardcode(eZona list[], int length, int cantidad)
 #endif
