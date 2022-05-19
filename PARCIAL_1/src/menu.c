@@ -671,9 +671,13 @@ int menuReportes(eCensista listCensista[], int lenCensista , eZona listZona[], i
     printf("***********************************************************************************************************\n");
     printf("1- Listado de Censistas \n");
     printf("2- Listado de Zonas \n");
-    printf("3- Volver al menu principal \n");
+    printf("3- cantidad de censistas en estado Activo con zona Pendiente. \n");
+    printf("4- \n");
+    printf("5- nombre y zona con mas casas ausentes \n");
+    printf("6- informar censista cuya zona fue mas censada\n");
+    printf("7- Promedio de censos por censista/zona \n");
 
-    inputNumberInt(&opcionMenu, "Ingrese una opcion: ", "Error, ingrese una opcion: ", 1, 3);
+    inputNumberInt(&opcionMenu, "Ingrese una opcion: ", "Error, ingrese una opcion: ", 1, 7);
 
     switch(opcionMenu)
     {
@@ -700,6 +704,44 @@ int menuReportes(eCensista listCensista[], int lenCensista , eZona listZona[], i
 
             printf("\n");
         break;
+
+        case 3:
+        	printf("***************************************************************************************\n");
+            printf("*                 cantidad de censistas en estado Activo con zona Pendiente.          *\n");
+
+            reporteCensistaActivoZonaPendiente(listCensista, lenCensista, listZona, lenZona);
+        break;
+
+        case 4:
+        	printf("***************************************************************************************\n");
+            printf("*                                     								*\n");
+
+        break;
+
+        case 5:
+        	//no tengo localidad en la estructura de datos  asi que lo hice por zona con mas ausentes
+        	printf("***************************************************************************************\n");
+            printf("*              c.   nombre y zona con mas casas ausentes                			*\n");
+            reporteLocalidadMasCasasAusetes (listDatosCenso, tamDatosCenso, listLocalidades, lenLocalidades, listZona, lenZona);
+        break;
+
+        case 6:
+        	printf("***************************************************************************************\n");
+            printf("*                      informar censista cuya zona fue mas censada	                 *\n");
+            reporteCensistaMasCenso(listDatosCenso, tamDatosCenso, listCensista,  lenCensista, listZona,  lenZona);
+
+        break;
+
+        case 7:
+
+        	printf("***************************************************************************************\n");
+            printf("*                            Promedio de censos por censista/zona						*\n");
+
+            //informarPromedio(listDatosCenso,  tamDatosCenso, listZona, lenZona);
+            printf("\n");
+
+        break;
+
     }
     return validation;
 }

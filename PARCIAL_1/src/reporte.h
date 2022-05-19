@@ -59,4 +59,18 @@ int reporteListadoZonas(eZona listZona[], int lenZona, eCensista listCensista[],
 void reporteMostrarZona(eZona listZona, eCensista listCensista[], int lenCensista, int idCensista, eLocalidades listLocalidades[], int lenLocalidades);
 
 
+
+
+int reporteLocalidadMasCasasAusetes (eDatosCenso listaDatos[], int lenDatos, eLocalidades listaLocalidades[], int lenLocalidades, eZona listaZonas[], int lenZonas);
+
+//int informarPromedio(eDatosCenso listDatosCenso[], int lenDatosCenso, eZona listZona[], int lenZona);
+
+int reporteCensistaMasCenso(eDatosCenso listaDatos[], int lenDatos, eCensista listaCensista[], int lenCensista, eZona listaZonas[], int lenZonas);
+
+int reporteCensistaActivoZonaPendiente(eCensista listaCensista[], int lenCensista, eZona listaZonas[], int lenZonas);
+
+
+
+
+
 #endif /* REPORTE_H_ */

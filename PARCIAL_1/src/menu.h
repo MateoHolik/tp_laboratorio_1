@@ -7,6 +7,7 @@
 #include "censista.h"
 #include "zona.h"
 #include "datosCenso.h"
+#include "reporte.h"
 #include <string.h>
 #include <ctype.h>
 

@@ -147,7 +147,6 @@ int altaCensistaFechaNacimiento(eFechaNacimientoCensita listFecha[], int lenFech
         }
         else
         {
-
         	emptyIndex = obtenerCensistaFechaNacimiento(listFecha, lenFecha);
 
             if(emptyIndex != -1)
@@ -311,7 +310,7 @@ int mostrarCensistas(eCensista listCensista[], int lenCensista, eFechaNacimiento
 
     for(i=0; i < lenCensista; i++)
     {
-    	if(listCensista[i].isEmpty == OCUPADO && ( strcmp(listCensista[i].estado, EST_CENSISTA_ACTIVO) == 0 || strcmp(listCensista[i].estado, EST_CENSISTA_LIBERADO) == 0))
+    	if(listCensista[i].isEmpty == OCUPADO && (strcmp(listCensista[i].estado, EST_CENSISTA_ACTIVO) == 0 || strcmp(listCensista[i].estado, EST_CENSISTA_LIBERADO) == 0))
         {
     		mostrarCensista(listCensista[i], lenCensista, listFecha, lenFecha, listDomicilio, tamDireccion, listCensista[i].id);
             retorno=0;

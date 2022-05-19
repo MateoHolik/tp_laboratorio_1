@@ -112,12 +112,6 @@ int main()
                	}
                }
 
-
-
-
-
-
-
 			system("pause");
 			break;
         case 4:
@@ -139,6 +133,7 @@ int main()
 
             system("pause");
         break;
+
 
         case 5:
 

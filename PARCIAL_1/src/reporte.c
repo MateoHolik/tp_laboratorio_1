@@ -100,3 +100,144 @@ void reporteMostrarZona(eZona listZona, eCensista listCensista[], int lenCensist
 				apellido, nombre);
 }
 
+
+
+
+
+//d
+int reporteCensistaMasCenso(eDatosCenso listaDatos[], int lenDatos, eCensista listaCensista[], int lenCensista, eZona listaZonas[], int lenZonas)
+{
+	  int banderaMasCantidad;
+	  int ZonaMasCantidad;
+	  int indiceZona = 0;
+	  banderaMasCantidad = 0;
+
+	  // Informar el censista cuya zona fue la más censada (total censados presencial y virtual)
+
+	  for (int i = 0; i < lenDatos; i++)
+	  {
+	      if ((listaDatos[i].idZona> ZonaMasCantidad || banderaMasCantidad == 0))
+	      {
+	    	 ZonaMasCantidad = listaDatos[i].idZona;
+	    	 banderaMasCantidad = banderaMasCantidad + (listaDatos[i].qCensadosInSitu + listaDatos[i].qCensadosVirtual);
+		}
+	  }
+
+
+	  if (banderaMasCantidad == 0)
+	  {
+		  printf("No hay datos");
+	  }
+	  else
+	  {
+		    for(int j=0; j < lenDatos; j++)
+		    {
+		    	if(listaDatos[j].isEmpty == OCUPADO && listaDatos[j].idZona == ZonaMasCantidad)
+		        {
+
+		    		indiceZona = buscarZonaId(listaZonas, lenZonas, listaDatos[j].idZona);
+		        	printf("El censista %s tuvo la zona de %s como la mas censada de  \n", listaCensista[j].apellido, listaZonas[indiceZona].nombre);
+		        	break;
+		        }
+		    }
+
+	  }
+	  return banderaMasCantidad;
+}
+
+
+
+//c
+int reporteLocalidadMasCasasAusetes (eDatosCenso listaDatos[], int lenDatos, eLocalidades listaLocalidades[], int lenLocalidades, eZona listaZonas[], int lenZonas)
+{
+	  int banderaMasCantidad;
+	  int ZonaMasCantidad;
+
+	  banderaMasCantidad = 0;
+
+	  for (int i = 0; i < lenDatos; i++)
+	  {
+	      if ((listaDatos[i].idZona> ZonaMasCantidad || banderaMasCantidad == 0))
+	      {
+	    	 ZonaMasCantidad = listaDatos[i].idZona;
+	    	 banderaMasCantidad = banderaMasCantidad + listaDatos[i].qCensadosAusentes;
+		}
+	  }
+
+
+	  if (banderaMasCantidad == 0)
+	  {
+		  printf("No hay datos\n");
+	  }
+	  else
+	  {
+		    for(int j=0; j < lenDatos; j++)
+		    {
+		    	if(listaDatos[j].isEmpty == OCUPADO && listaDatos[j].idZona == ZonaMasCantidad)
+		        {
+
+		        	printf("Zona con mas ausentes %s  \n", listaZonas[j].nombre);
+		        	break;
+		        }
+		    }
+
+	  }
+	  return banderaMasCantidad;
+}
+
+
+//a
+int reporteCensistaActivoZonaPendiente(eCensista listaCensista[], int lenCensista, eZona listaZonas[], int lenZonas)
+{
+	  int cantidadCensista;
+	  int retorno = -1;
+	  cantidadCensista = 0;
+
+	  for(int i=0; i< lenZonas; i++)
+	     {
+	         if(strcmp(listaZonas[i].estado, EST_ZONA_PENDIENTE) == 0)
+	         {
+	             for (int k = 0; i < lenCensista; k++)
+	             {
+	                 if(listaCensista[k].id == listaZonas[i].idCensista && strcmp(listaCensista[k].estado, EST_CENSISTA_ACTIVO) == 0)
+	                 {
+	                	 cantidadCensista++;
+	                 }
+	             }
+	             retorno = 0;
+	         }
+	     }
+	  printf("cantidad de censistas en estado Activo con zona Pendiente %d  \n", cantidadCensista);
+	  return retorno;
+}
+
+
+
+//e
+/*int informarPromedio(eDatosCenso listDatosCenso[], int lenDatosCenso, eZona listZona[], int lenZona)
+{
+	int retorno = -1;
+	int contadorZona= 0;
+	float promedio = 0;
+	int acumulador;
+
+	// 500(P /10(z
+
+
+       if (acumulador > 0)
+             {
+             	promedio = acumulador / contadorZona;
+         		printf("Promedio  de censoses %.2f \n ",  promedio);
+         		retorno = 0;
+             }
+
+         }
+    return retorno;
+
+}*/
+
+
+
+
+
+
