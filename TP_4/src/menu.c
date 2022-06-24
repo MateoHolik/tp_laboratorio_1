@@ -16,9 +16,10 @@ int menuPrincipal(int* opcion)
     printf("5. Baja de pasajero                                                             \n");
     printf("6. Listar pasajeros                                                             \n");
     printf("7. Ordenar pasajeros                                                            \n");
-    printf("8. Guardar los datos de los pasajeros en el archivo data.csv (modo texto).      \n");
-    printf("9. Guardar los datos de los pasajeros en el archivo data.bin (modo binario).    \n");
-    printf("10. Salir del programa                                                          \n\n");
+    printf("8. Cantidad pasajero de tipo VIP                                                \n");
+    printf("9. Guardar los datos de los pasajeros en el archivo data.csv (modo texto).      \n");
+    printf("10. Guardar los datos de los pasajeros en el archivo data.bin (modo binario).    \n");
+    printf("11. Salir del programa                                                          \n\n");
 
 
 

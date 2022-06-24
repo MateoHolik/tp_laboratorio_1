@@ -195,7 +195,26 @@ int main()
 
 			break;
 
-			case 8: //GUARDA CSV
+			case 8:
+
+				if(cantidadPasajeros == 0)
+				{
+					printf("No hay Pasajeros para contar. \n");
+				}
+				else
+				{
+					if(!totalPasajerosVip(listaPasajeros))
+					{
+						printf("Error al ordenar pasajeros.\n");
+					}
+				}
+
+				pausa(MENSAJE_PAUSA);
+
+			break;
+
+
+			case 9: //GUARDA CSV
 				if(!controller_saveAsText(ARCHIVO_CSV, listaPasajeros))
 				{
 					printf("No se pudo guardar el archivo de texto. \n");
@@ -209,7 +228,7 @@ int main()
 
 			break;
 
-			case 9: //GUARDA BIN
+			case 10: //GUARDA BIN
 				if(!controller_saveAsBinary(ARCHIVO_BIN, listaPasajeros))
 				{
 					printf("No se pudo guardar el archivo binario. \n");

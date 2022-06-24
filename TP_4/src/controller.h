@@ -1,6 +1,32 @@
 #include "../inc/LinkedList.h"
 #include "input.h"
 
+int ll_count(LinkedList* this, int (*fn)(void* element));
+int totalPasajerosVip(LinkedList* this);
+int pasajero_filtroVip(void* this);
+
+/*//////////////////////////////////////////////////////////////////*/
+
+LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element));
+int pasajero_filtroTipo(void* this);
+int controller_tipoPasajero(LinkedList* this);
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
 /** \brief Carga los datos de los pasajeros desde el archivo data.csv (modo texto).
  * \param path char*
  * \param pArrayListPassenger LinkedList*

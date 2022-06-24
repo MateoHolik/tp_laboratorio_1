@@ -4,7 +4,7 @@
 #include "input.h"
 #include "Passenger.h"
 
-#define MENU_PRINCIPAL_Q 10
+#define MENU_PRINCIPAL_Q 11
 #define MENU_ORDENAMIENTO_Q 4
 #define MENU_EDICION_Q 5
 

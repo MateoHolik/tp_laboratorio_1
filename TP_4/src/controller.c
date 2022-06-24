@@ -5,6 +5,103 @@
 #include "menu.h"
 #include "input.h"
 
+int totalPasajerosVip(LinkedList* this)
+{
+    int retorno = -1;
+    int cantidad = 0;
+    LinkedList* tipoPasajeroVip;
+
+    if(this != NULL)
+    {
+    	tipoPasajeroVip = ll_newLinkedList(); //crea el constructor
+    	tipoPasajeroVip = ll_filter(this, pasajero_filtroVip);
+
+    	cantidad = ll_count(tipoPasajeroVip, pasajero_filtroVip);
+
+    	printf("Cantidad de pasajeros vip: %d \n", cantidad);
+
+    }
+    return retorno;
+}
+
+int pasajero_filtroVip(void* this)
+{
+    int returnAux = 0;
+    Passenger* listPasajeros;
+    int pasajeroVip = 3;
+    /*
+    1. Business
+    2. Primer Clase
+    3. VIP
+    4. Diplomatico
+    */
+
+    if(this != NULL)
+    {
+    	listPasajeros = (void*)this;
+
+        if(listPasajeros -> tipoPasajero == pasajeroVip)
+        {
+            returnAux = 1;
+        }
+
+
+    }
+    return returnAux;
+}
+
+
+int ll_count(LinkedList* this, int (*fn)(void* element))
+{
+	int contador = 0;
+	int valor;
+	int largo;
+	void* pElement;
+
+	if(this != NULL && *fn != NULL)
+	{
+		largo = ll_len(this);
+
+		for (int i = 0; i < largo; i++)
+		{
+			pElement = ll_get(this, i);
+			valor = fn(pElement);
+
+			if (valor != -1)
+			{
+				contador = contador + valor;
+			}
+		}
+	}
+
+	return contador;
+}
+
+
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int controller_loadFromText(char* path , LinkedList* pArrayListPassenger)
 {
     int retorno = 0;
